@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" class="pf-m-redhat-font">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="fonts.css" />
+    <!-- Include latest PatternFly CSS via CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/@patternfly/patternfly/patternfly.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" />
+    <title>Create Chart Popup</title>
+</head>
+
+<body>
+    <div class="pf-l-bullseye">
+        <div class="pf-l-bullseye__item">
+            <div style="border:1px solid; padding:50px;">
+                <form novalidate class="pf-c-form">
+                    <!-- Chart Popup 이름 -->
+                    <div class="pf-c-form__label-text">Create Chart</div>
+
+                    <!-- Chart 이름 입력 창-->
+                    <div class="pf-c-form__group">
+                        <div class="pf-c-form__group-label">
+                            <label class="pf-c-form__label" for="form-vertical-name">
+                                <span class="pf-c-form__label-text">Chart Name</span>
+                                <span class="pf-c-form__label-required" aria-hidden="true">&#42;</span>
+                            </label>
+                            <button class="pf-c-form__group-label-help" aria-label="More information for name field"
+                                aria-describedby="form-vertical-name">
+                                <i class="pficon pf-icon-help" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="pf-c-form__group-control">
+                            <input class="pf-c-form-control" type="text" id="form-vertical-name"
+                                name="form-vertical-name" required />
+                        </div>
+                    </div>
+
+                    <!-- Chart Description 입력 창-->
+                    <div class="pf-c-form__group">
+                        <div class="pf-c-form__group-label">
+                            <label class="pf-c-form__label" for="form-vertical-name">
+                                <span class="pf-c-form__label-text">Chart Description</span>
+                                <!-- <span class="pf-c-form__label-required" aria-hidden="true">&#42;</span> -->
+                            </label>
+                            <button class="pf-c-form__group-label-help" aria-label="More information for name field"
+                                aria-describedby="form-vertical-name">
+                                <i class="pficon pf-icon-help" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="pf-c-form__group-control">
+                            <input class="pf-c-form-control" type="text" id="form-vertical-name"
+                                name="form-vertical-name" required />
+                        </div>
+                    </div><br>
+
+                    <div class="pf-c-divider" role="separator"></div>
+
+                    <!-- Resource Useage 이름 -->
+                    <div class="pf-c-form__label-text">Resource Usage</div>
+
+                    <div class="pf-l-flex">
+                        <div class="pf-l-flex__item">
+                            <!-- Nf Select -->
+                            <div class="pf-c-context-selector">
+                                <span id="context-selector-collapsed-example-label" hidden>Selected project:</span>
+                                <label class="pf-c-form__label" for="form-vertical-name">
+                                    <span class="pf-c-form__label-text">Nf</span>
+                                    <span class="pf-c-form__label-required" aria-hidden="true">&#42;</span>
+                                </label>
+                                <button class="pf-c-context-selector__toggle" aria-expanded="false"
+                                    id="context-selector-collapsed-example-toggle"
+                                    aria-labelledby="context-selector-collapsed-example-label context-selector-collapsed-example-toggle">
+                                    <span class="pf-c-context-selector__toggle-text">cnfems</span>
+                                    <span class="pf-c-context-selector__toggle-icon">
+                                        <i class="fas fa-caret-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                                <div class="pf-c-context-selector__menu" hidden>
+                                    <div class="pf-c-context-selector__menu-search">
+                                        <div class="pf-c-search-input">
+                                            <div class="pf-c-search-input__bar">
+                                                <span class="pf-c-search-input__text">
+                                                    <span class="pf-c-search-input__icon">
+                                                        <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                                                    </span>
+                                                    <input class="pf-c-search-input__text-input" type="text"
+                                                        placeholder="Search" aria-label="Search" />
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pf-l-flex__item">
+                            <!-- App Select -->
+                            <div class="pf-c-context-selector">
+                                <span id="context-selector-collapsed-example-label" hidden>Selected project:</span>
+                                <label class="pf-c-form__label" for="form-vertical-name">
+                                    <span class="pf-c-form__label-text">App</span>
+                                    <span class="pf-c-form__label-required" aria-hidden="true">&#42;</span>
+                                </label>
+                                <button class="pf-c-context-selector__toggle" aria-expanded="false"
+                                    id="context-selector-collapsed-example-toggle"
+                                    aria-labelledby="context-selector-collapsed-example-label context-selector-collapsed-example-toggle">
+                                    <span class="pf-c-context-selector__toggle-text">All</span>
+                                    <span class="pf-c-context-selector__toggle-icon">
+                                        <i class="fas fa-caret-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                                <div class="pf-c-context-selector__menu" hidden>
+                                    <div class="pf-c-context-selector__menu-search">
+                                        <div class="pf-c-search-input">
+                                            <div class="pf-c-search-input__bar">
+                                                <span class="pf-c-search-input__text">
+                                                    <span class="pf-c-search-input__icon">
+                                                        <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                                                    </span>
+                                                    <input class="pf-c-search-input__text-input" type="text"
+                                                        placeholder="Search" aria-label="Search" />
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pf-l-flex__item">
+                            <!-- Category Select -->
+                            <div class="pf-c-context-selector">
+                                <span id="context-selector-collapsed-example-label" hidden>Selected project:</span>
+                                <label class="pf-c-form__label" for="form-vertical-name">
+                                    <span class="pf-c-form__label-text">Category</span>
+                                    <span class="pf-c-form__label-required" aria-hidden="true">&#42;</span>
+                                </label>
+                                <button class="pf-c-context-selector__toggle" aria-expanded="false"
+                                    id="context-selector-collapsed-example-toggle"
+                                    aria-labelledby="context-selector-collapsed-example-label context-selector-collapsed-example-toggle">
+                                    <span class="pf-c-context-selector__toggle-text">CPU_RESOURCE</span>
+                                    <span class="pf-c-context-selector__toggle-icon">
+                                        <i class="fas fa-caret-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                                <div class="pf-c-context-selector__menu" hidden>
+                                    <div class="pf-c-context-selector__menu-search">
+                                        <div class="pf-c-search-input">
+                                            <div class="pf-c-search-input__bar">
+                                                <span class="pf-c-search-input__text">
+                                                    <span class="pf-c-search-input__icon">
+                                                        <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                                                    </span>
+                                                    <input class="pf-c-search-input__text-input" type="text"
+                                                        placeholder="Search" aria-label="Search" />
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pf-l-flex pf-m-justify-content-space-between ws-example-flex-border">
+                        <div class="pf-l-stack__item">
+                            <div class="pf-c-context-selector">
+                                <span id="context-selector-collapsed-example-label" hidden>Selected project:</span>
+                                <label class="pf-c-form__label" for="form-vertical-name">
+                                    <span class="pf-c-form__label-text">Graph</span>
+                                    <span class="pf-c-form__label-required" aria-hidden="true">&#42;</span>
+                                </label>
+                                <button class="pf-c-context-selector__toggle" aria-expanded="false"
+                                    id="context-selector-collapsed-example-toggle"
+                                    aria-labelledby="context-selector-collapsed-example-label context-selector-collapsed-example-toggle">
+                                    <span class="pf-c-context-selector__toggle-text">Area</span>
+                                    <span class="pf-c-context-selector__toggle-icon">
+                                        <i class="fas fa-caret-down" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                                <div class="pf-c-context-selector__menu" hidden>
+                                    <div class="pf-c-context-selector__menu-search">
+                                        <div class="pf-c-search-input">
+                                            <div class="pf-c-search-input__bar">
+                                                <span class="pf-c-search-input__text">
+                                                    <span class="pf-c-search-input__icon">
+                                                        <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                                                    </span>
+                                                    <input class="pf-c-search-input__text-input" type="text"
+                                                        placeholder="Search" aria-label="Search" />
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pf-l-stack__item">
+                            <div class="pf-c-check">
+                                <input class="pf-c-check__input" type="checkbox" id="check-with-body"
+                                    name="check-with-body" />
+                                <label class="pf-c-check__label" for="check-with-body">Display In Pods</label>
+                                <span class="pf-c-check__body">show graph display pod</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="border:1px solid; padding:10px;">
+                        <br><br><br><br><br>
+                        <p>Sample Graph 출력</p><br><br><br><br><br>
+                    </div>
+                    <div class="pf-l-flex pf-m-justify-content-flex-end">
+                        <div class="pf-l-flex__item">
+                            <button class="pf-c-button pf-m-secondary" type="button">Cancel</button>
+                            <button class="pf-c-button pf-m-primary" type="button">Create</button>
+                        </div>
+                    </div>
+
+                    <div class="pf-c-alert pf-m-danger pf-m-inline" aria-label="Inline danger alert">
+                        <div class="pf-c-alert__icon">
+                            <i class="fas fa-fw fa-exclamation-circle" aria-hidden="true"></i>
+                        </div>
+                        <p class="pf-c-alert__title">
+                            <span class="pf-screen-reader">Danger alert:</span>
+                            An error occurred
+                            <span style="color:black" style="font-weight:bold"> ${GRPC_ERROR_CODE}</span>
+                        </p>
+                        <div class="pf-c-alert__description">
+                            <p>${GRPC_ERROR_STRING</p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
